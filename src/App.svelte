@@ -24,10 +24,8 @@
 	
 </script>
   
-<style>
-	/* Add your own styles here */
-</style>
-  
 <main>
+	<h1>welcome to your second brain!</h1>
+
 	<ParaGrid folders={$folders}/>
 </main>
