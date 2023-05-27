@@ -1,6 +1,10 @@
 <script lang="ts">
-    export let folder:any
-    console.log(folder);
-    
+  import type { FolderDataStructure, FolderDataWrapper } from '../types/types';
+  export let inboxFiles: FolderDataStructure;
+  console.log('folder', inboxFiles);
 </script>
-inbox here
+
+<h2>inbox</h2>
+{#each inboxFiles.files as item}
+  <li>{item}</li>
+{/each}
