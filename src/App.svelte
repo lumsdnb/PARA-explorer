@@ -29,6 +29,18 @@
 <main>
   <h1>welcome to your second brain!</h1>
   <InboxAdder />
-  <InboxViewer folder={$folders.inbox} />
-  <ParaGrid folders={$folders} />
+  <!-- <ParaGrid folders={$folders} /> -->
 </main>
+
+<div class="kindle">
+  <InboxViewer inboxFiles={$folders.inbox} />
+</div>
+
+<style>
+  .kindle {
+    width: 600px;
+    height: 800px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+</style>
