@@ -1,6 +1,10 @@
+<!-- simple text checkbox item
+still has some issues, like focus area not being styled and long lines not being truncated -->
+
 <script lang="ts">
 	import { afterUpdate } from 'svelte';
 	import DraggerIcon from './DraggerIcon.svelte';
+	import '../../components/theme.css';
 
 	export let text = '';
 	export let isChecked = false;
@@ -32,14 +36,15 @@
 	<div class="toggle {isChecked ? 'checked' : ''}" on:click={() => (isChecked = !isChecked)}>
 		{isChecked ? '✓' : ''}
 	</div>
-
-	{#if isEditMode}
-		<input class="edit-input" type="text" bind:value={editText} on:blur={exitEditMode} />
-	{:else}
-		<div class="text {isChecked ? 'checked' : ''}" on:click={enterEditMode}>
-			{text}
-		</div>
-	{/if}
+	<div class="pad10">
+		{#if isEditMode}
+			<input class="edit-input" type="text" bind:value={editText} on:blur={exitEditMode} />
+		{:else}
+			<div class="text {isChecked ? 'checked' : ''}" on:click={enterEditMode}>
+				{text}
+			</div>
+		{/if}
+	</div>
 
 	<DraggerIcon />
 </div>
@@ -48,7 +53,6 @@
 	.item {
 		display: flex;
 		align-items: center;
-		padding: 10px;
 		border-bottom: 1px solid #ccc;
 	}
 
@@ -65,8 +69,7 @@
 	}
 
 	.toggle.checked {
-		background-color: #949494;
-		border-color: #252525;
+		border-color: #000000;
 	}
 
 	.text,
@@ -74,11 +77,15 @@
 		flex: 1;
 		color: #333;
 		text-decoration: none;
+		height: 100%;
 	}
 
 	.text.checked {
 		color: #999;
 		text-decoration: line-through;
+	}
+	.pad10 {
+		padding: 10px;
 	}
 
 	.edit-input {
