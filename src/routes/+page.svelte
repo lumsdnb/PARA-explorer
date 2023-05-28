@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
 	import type { Writable } from 'svelte/store';
-	import type { FolderContent, Workspace } from '../lib/types/types';
-	import ParaGrid from '../components/PARAGrid.svelte';
+	import type { Workspace } from '../lib/types/types';
 	import { onMount } from 'svelte';
-	import InboxAdder from '../components/InboxAdder.svelte';
 
 	const folders: Writable<Workspace> = writable({
 		inbox: { files: [] },
@@ -38,9 +36,19 @@
 </script>
 
 <main>
-	<h1>welcome to your second brain!</h1>
-	<InboxAdder />
-	<ParaGrid folders={$folders} />
+	<h1>springboard</h1>
+	<section>
+		<h2>jump in</h2>
+		<ul>
+			<li>some bullet point</li>
+		</ul>
+	</section>
+	<section>
+		<h2>jump in</h2>
+		<ul>
+			<li>some bullet point</li>
+		</ul>
+	</section>
 </main>
 
 <!-- <div class="kindle">
