@@ -1,13 +1,18 @@
-export type FolderDataStructure = {
-  files: string[];
+export type MarkdownFile = {
+	title: string;
+	content: string;
+	tags: string[];
+	insideInbox: boolean;
 };
 
-export type FolderDataWrapper = {
-  inbox?: FolderDataStructure;
-  projects: FolderDataStructure;
-  areas: FolderDataStructure;
-  resources: FolderDataStructure;
-  archive: FolderDataStructure;
+export type FolderContent = {
+	files: MarkdownFile[];
 };
 
-//a rename might be in order, and i need a type for markdown files
+export type Workspace = {
+	inbox?: FolderContent;
+	projects: FolderContent;
+	areas: FolderContent;
+	resources: FolderContent;
+	archive: FolderContent;
+};
