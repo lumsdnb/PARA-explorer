@@ -1,9 +1,8 @@
 <nav>
-	<a href="/">Homepage</a>
+	<a href="/">springboard</a>
 	<a href="/0_inbox">inbox</a>
 	<a href="/1_today">today</a>
 	<a href="/2_calendar">upcoming</a>
-
 	<a href="/projects">projects</a>
 	<a href="/reflect">reflect</a>
 	<a href="/archive">logbook</a>
@@ -15,6 +14,10 @@
 		padding: 10px;
 		display: flex;
 		justify-content: space-between;
+		position: fixed;
+		bottom: 0;
+		padding: 1.3rem 1rem;
+		margin: 0;
 	}
 
 	a {
