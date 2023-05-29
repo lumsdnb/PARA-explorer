@@ -1,24 +1,60 @@
 <script>
 	export let value = 0;
+	import '../components/theme.css';
 </script>
 
-<div class="progress-bar">
-	<div class="progress-line" style="width: {value}%" />
-</div>
+<progress max="100" {value} />
 
 <style>
-	.progress-bar {
+	progress {
 		height: 16px;
 		width: 100%;
 		position: relative;
-		border: 2px solid #000;
 		overflow: hidden;
 	}
+	progress[value] {
+		background-color: #fff;
+	}
 
-	.progress-line {
-		height: 100%;
-		background-color: #42b983;
-		width: 0%;
-		transition: width 0.5s ease-in-out;
+	/* Reset default styles */
+	progress {
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		border: none;
+		border: 1px solid #000;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 15px;
+		background-color: #fff;
+	}
+
+	/* Styling for the progress bar */
+	progress::-webkit-progress-bar {
+		background-color: white;
+	}
+
+	progress::-webkit-progress-value {
+		background-color: var(--accent-color);
+	}
+
+	progress::-moz-progress-bar {
+		background-color: var(--accent-color);
+	}
+
+	/* Customize the progress indicator */
+	progress::-webkit-progress-value {
+		background-image: linear-gradient(45deg, #f00 50%, transparent 50%);
+		background-size: 8px 8px;
+	}
+
+	/* Optional animation for the progress indicator */
+	progress::-webkit-progress-value {
+		transition: width 0.5s ease;
+	}
+
+	progress::-moz-progress-bar {
+		transition: width 0.5s ease;
 	}
 </style>
