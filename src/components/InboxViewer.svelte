@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { FolderDataStructure, FolderDataWrapper } from '../types/types';
-  export let inboxFiles: FolderDataStructure;
-  console.log('folder', inboxFiles);
+  import type { Folder, FolderGroup } from '../../backend/src/types/types'
+  export let inboxFiles: Folder
+  console.log('folder', inboxFiles.files)
 </script>
 
 <h2>inbox</h2>
